@@ -1,0 +1,42 @@
+<%= form_for(@provider) do |f| %>
+  <% if @provider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@provider.errors.count, "error") %> prohibited this provider from being saved:</h2>
+
+      <ul>
+      <% @provider.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <b>Дата дачала сотрудничества:</b><br />
+    <%= f.date_select :d_start_cooperation %>
+  </div>
+
+  <div class="field">
+    <b>Название:</b><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <b>Адрес:</b><br />
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <b>Телефон:</b><br />
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <b>Номер платёжного счёта:</b><br />
+    <%= f.text_field :payment_account %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

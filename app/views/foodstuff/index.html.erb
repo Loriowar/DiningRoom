@@ -1,0 +1,37 @@
+<h1>Список продуктов питания</h1>
+
+<% if @foodstuff.blank? %>
+  <div>
+    Продукты отсутствуют
+  </div>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Дата создания</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @foodstuff.each do |foodstuff| %>
+        <tr>
+          <td><%= foodstuff.id %></td>
+          <td><%= foodstuff.name %></td>
+          <td><%= foodstuff.d_created %></td>
+          <td><%= link_to 'Показать', foodstuff %></td>
+          <td><%= link_to 'Редактировать', edit_foodstuff_path(foodstuff) %></td>
+          <td><%= link_to 'Удалить', foodstuff, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<br>
+
+<%= link_to 'Новый Продукт', new_foodstuff_path %>

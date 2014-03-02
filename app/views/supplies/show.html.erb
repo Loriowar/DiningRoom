@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ID:</b>
+  <%= @supply.id %>
+</p>
+
+<p>
+  <b>Поставщик:</b>
+  <%= @supply.provider.name %>
+</p>
+
+<p>
+  <b>Продукт:</b>
+  <%= @supply.foodstuff.name %>
+</p>
+
+<p>
+  <b>Дата поставки:</b>
+  <%= @supply.d_delivery %>
+</p>
+
+<p>
+  <b>Количество:</b>
+  <%= @supply.amount %>
+</p>
+
+<%= link_to 'Редактировать', edit_supplie_path(@supply) %> |
+<%= link_to 'Назад', supplies_path %>

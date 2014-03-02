@@ -1,0 +1,43 @@
+<h1>Список поставщиков</h1>
+
+<% if @providers.blank? %>
+  <div>
+    Продукты отсутствуют
+  </div>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Дата дачала сотрудничества</th>
+        <th>Название</th>
+        <th>Адрес</th>
+        <th>Телефон</th>
+        <th>Номер платёжного счёта</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @providers.each do |provider| %>
+        <tr>
+          <td><%= provider.id %></td>
+          <td><%= provider.d_start_cooperation %></td>
+          <td><%= provider.name %></td>
+          <td><%= provider.address %></td>
+          <td><%= provider.phone %></td>
+          <td><%= provider.payment_account %></td>
+          <td><%= link_to 'Показать', provider %></td>
+          <td><%= link_to 'Редактировать', edit_provider_path(provider) %></td>
+          <td><%= link_to 'Удалить', provider, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<br>
+
+<%= link_to 'Новый поставщик', new_provider_path %>

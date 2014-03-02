@@ -7,7 +7,7 @@ class CreateProviders < ActiveRecord::Migration
         name VARCHAR(255),
         address VARCHAR(500),
         phone VARCHAR(30),
-        payment_account DECIMAL,
+        payment_account VARCHAR(60),
         PRIMARY KEY (id)
       ) ENGINE=InnoDB CHARACTER SET=utf8;
     SQL

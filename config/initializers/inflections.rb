@@ -8,9 +8,11 @@
 #   inflect.singular /^(ox)en/i, '\1'
 #   inflect.irregular 'person', 'people'
 #   inflect.uncountable %w( fish sheep )
+#   inflect.acronym 'RESTful'
 # end
 
 # These inflection rules are supported but not enabled by default:
-# ActiveSupport::Inflector.inflections(:en) do |inflect|
-#   inflect.acronym 'RESTful'
-# end
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.uncountable %w( foodstuff cashbox menu )
+  inflect.singular 'supplies', 'supplie'
+end

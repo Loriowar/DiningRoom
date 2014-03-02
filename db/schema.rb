@@ -70,16 +70,16 @@ ActiveRecord::Schema.define(version: 20140301120438) do
   end
 
   create_table "providers", force: true do |t|
-    t.date    "d_start_cooperation"
-    t.string  "name"
-    t.string  "address",             limit: 500
-    t.string  "phone",               limit: 30
-    t.decimal "payment_account",                 precision: 10, scale: 0
+    t.date   "d_start_cooperation"
+    t.string "name"
+    t.string "address",             limit: 500
+    t.string "phone",               limit: 30
+    t.string "payment_account",     limit: 60
   end
 
   create_table "supplies", force: true do |t|
     t.integer "provider_id"
-    t.integer "foodstaff_id"
+    t.integer "foodstuff_id"
     t.date    "d_delivery"
     t.integer "amount"
   end

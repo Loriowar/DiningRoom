@@ -4,7 +4,7 @@ class CreateSupplies < ActiveRecord::Migration
       CREATE TABLE supplies (
       id INT(11) NOT NULL AUTO_INCREMENT,
       provider_id INT(11),
-      foodstaff_id INT(11),
+      foodstuff_id INT(11),
       d_delivery DATE,
       amount INT,
       PRIMARY KEY  (id)

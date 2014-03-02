@@ -1,0 +1,22 @@
+<%= form_for(@foodstuff) do |f| %>
+  <% if @foodstuff.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@foodstuff.errors.count, "error") %> prohibited this foodstuff from being saved:</h2>
+
+      <ul>
+      <% @foodstuff.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <b>Название:</b><br />
+      <%= f.text_field :name %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,41 @@
+<h1>Список поставок</h1>
+
+<% if @supplies.blank? %>
+  <div>
+    Поставки отсутствуют
+  </div>
+<% else %>
+<table>
+  <thead>
+    <tr>
+      <th>ID:</th>
+      <th>Поставщик:</th>
+      <th>Продукт:</th>
+      <th>Дата поставки:</th>
+      <th>Количество:</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @supplies.each do |supply| %>
+      <tr>
+        <td><%= supply.id %></td>
+        <td><%= supply.provider.name %></td>
+        <td><%= supply.foodstuff.name %></td>
+        <td><%= supply.d_delivery %></td>
+        <td><%= supply.amount %></td>
+        <td><%= link_to 'Показать', supply %></td>
+        <td><%= link_to 'Редактировать', edit_supplie_path(supply) %></td>
+        <td><%= link_to 'Удалить', supply, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+<br>
+
+<%= link_to 'Новая поставка', new_supplie_path %>
