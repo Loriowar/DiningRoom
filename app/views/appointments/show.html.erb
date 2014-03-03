@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ID:</b>
+  <%= @appointment.id %>
+</p>
+
+<p>
+  <b>Название:</b>
+  <%= @appointment.name %>
+</p>
+
+<p>
+  <b>Зарплата:</b>
+  <%= @appointment.salary    %>
+</p>
+
+
+<%= link_to 'Редактировать', edit_appointment_path(@appointment) %> |
+<%= link_to 'Назад', appointments_path %>
