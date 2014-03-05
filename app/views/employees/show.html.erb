@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ID:</b>
+  <%= @employee.id %>
+</p>
+
+<p>
+  <b>Фамилия:</b>
+  <%= @employee.last_name %>
+</p>
+
+<p>
+  <b>Имя:</b>
+  <%= @employee.first_name %>
+</p>
+
+<p>
+  <b>Отчество:</b>
+  <%= @employee.patronymic_name %>
+</p>
+
+<p>
+  <b>Дата приема:</b>
+  <%= @employee.d_hiring %>
+</p>
+
+<p>
+  <b>Должность:</b>
+  <%= @employee.appointment.name %>
+</p>
+
+<%= link_to 'Редактировать', edit_employee_path(@employee) %> |
+<%= link_to 'Назад', employees_path %>

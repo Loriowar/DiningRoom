@@ -1,0 +1,44 @@
+<%= form_for(@employee) do |f| %>
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% @employee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <b>Фамилия:</b><br />
+      <%= f.text_field :last_name %>
+    </div>
+
+    <div class="field">
+      <b>Имя:</b><br />
+      <%= f.text_field :first_name %>
+    </div>
+
+    <div class="field">
+      <b>Отчество:</b><br />
+      <%= f.text_field :patronymic_name %>
+    </div>
+
+    <div class="field">
+      <b>Дата приема:</b><br />
+      <%= f.date_select :d_hiring %>
+    </div>
+
+    <div class="field">
+      <b>Должность:</b><br />
+      <%= f.select :appointment_id, options_from_collection_for_select(Appointment.all, :id, :name) %>
+    </div>
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
