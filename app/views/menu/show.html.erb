@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ID:</b>
+  <%= @menu.id %>
+</p>
+
+<p>
+  <b>Название:</b>
+  <%= @menu.dish.name %>
+</p>
+
+<p>
+  <b>Дата:</b>
+  <%= @menu.date %>
+</p>
+
+<p>
+  <b>Цена:</b>
+  <%= @menu.price %>
+</p>
+
+<%= link_to 'Редактировать', edit_menu_path(@menu) %> |
+<%= link_to 'Назад', menu_index_path %>

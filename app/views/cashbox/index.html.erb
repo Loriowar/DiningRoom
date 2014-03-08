@@ -1,0 +1,39 @@
+<h1>Записи в кассе</h1>
+
+<% if @cashbox.blank? %>
+    <div>
+      Записи отсутствуют
+    </div>
+<% else %>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Сотрудник</th>
+          <th>Дата</th>
+          <th>Выручка</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @cashbox.each do |cashbox| %>
+          <tr>
+            <td><%= cashbox.id %></td>
+            <td><%= cashbox.employee.short_name %></td>
+            <td><%= cashbox.date %></td>
+            <td><%= cashbox.profit %></td>
+            <td><%= link_to 'Показать', cashbox %></td>
+            <td><%= link_to 'Редактировать', edit_cashbox_path(cashbox) %></td>
+            <td><%= link_to 'Удалить', cashbox, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% end %>
+
+<br>
+
+<%= link_to 'Новая запись', new_cashbox_path %>

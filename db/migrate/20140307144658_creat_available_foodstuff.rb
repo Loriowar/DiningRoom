@@ -1,11 +1,11 @@
-class CreateMenu < ActiveRecord::Migration
+class CreatAvailableFoodstuff < ActiveRecord::Migration
+
   def up
     execute <<-SQL
-      CREATE TABLE menu (
+      CREATE TABLE available_foodstuff (
         id INT(11) NOT NULL AUTO_INCREMENT,
-        dish_id INT(11),
         date DATE,
-        price DECIMAL,
+        foodstuff_id INT(11),
         PRIMARY KEY  (id)
       ) ENGINE=InnoDB CHARACTER SET=utf8;
     SQL
@@ -13,7 +13,7 @@ class CreateMenu < ActiveRecord::Migration
 
   def down
     execute <<-SQL
-      DROP TABLE menu;
+      DROP TABLE available_foodstuff;
     SQL
   end
 end

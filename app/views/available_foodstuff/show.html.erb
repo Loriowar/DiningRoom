@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ID:</b>
+  <%= @available_foodstuff.id %>
+</p>
+
+<p>
+  <b>Дата:</b>
+  <%= @available_foodstuff.date %>
+</p>
+
+<p>
+  <b>Продукты:</b>
+  <%= @available_foodstuff.foodstuff.name %>
+</p>
+
+<%= link_to 'Редактировать', edit_available_foodstuff_path(@available_foodstuff) %> |
+<%= link_to 'Назад', available_foodstuff_index_path %>

@@ -1,0 +1,39 @@
+<h1>Список меню</h1>
+
+<% if @menu.blank? %>
+    <div>
+      Записи отсутствуют
+    </div>
+<% else %>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Блюдо</th>
+          <th>Дата</th>
+          <th>Цена</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @menu.each do |menu| %>
+          <tr>
+            <td><%= menu.id %></td>
+            <td><%= menu.dish.name %></td>
+            <td><%= menu.date %></td>
+            <td><%= menu.price %></td>
+            <td><%= link_to 'Показать', menu %></td>
+            <td><%= link_to 'Редактировать', edit_menu_path(menu) %></td>
+            <td><%= link_to 'Удалить', menu, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% end %>
+
+<br>
+
+<%= link_to 'Новое Меню', new_menu_path %>

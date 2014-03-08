@@ -13,6 +13,6 @@
 
 # These inflection rules are supported but not enabled by default:
 ActiveSupport::Inflector.inflections(:en) do |inflect|
-  inflect.uncountable %w( foodstuff cashbox menu )
+  inflect.uncountable %w( foodstuff cashbox menu available_foodstuff )
   inflect.singular 'supplies', 'supplie'
 end

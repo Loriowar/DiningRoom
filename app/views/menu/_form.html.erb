@@ -1,0 +1,32 @@
+<%= form_for(@menu) do |f| %>
+  <% if @menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+
+      <ul>
+      <% @menu.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <b>Блюдо:</b><br />
+      <%= f.select :dish_id, options_from_collection_for_select(Dish.all, :id, :name) %>
+    </div>
+
+    <div class="field">
+    <b>Дата:</b><br />
+    <%= f.date_select :date %>
+    </div>
+
+    <div class="field">
+      <b>Цена:</b><br />
+      <%= f.number_field :price %>
+    </div>
+
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140301120438) do
+ActiveRecord::Schema.define(version: 20140307144658) do
 
   create_table "appointments", force: true do |t|
     t.string  "name"
     t.decimal "salary", precision: 10, scale: 0
+  end
+
+  create_table "available_foodstuff", force: true do |t|
+    t.date    "date"
+    t.integer "foodstuff_id"
   end
 
   create_table "cashbox", force: true do |t|
@@ -59,8 +64,8 @@ ActiveRecord::Schema.define(version: 20140301120438) do
 
   create_table "menu", force: true do |t|
     t.integer "dish_id"
-    t.string  "week_day", limit: 20
-    t.decimal "price",               precision: 10, scale: 0
+    t.date    "date"
+    t.decimal "price",   precision: 10, scale: 0
   end
 
   create_table "production_plans", force: true do |t|

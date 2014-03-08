@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ID:</b>
+  <%= @dish.id %>
+</p>
+
+<p>
+  <b>Название:</b>
+  <%= @dish.name %>
+</p>
+
+<p>
+  <b>Калории:</b>
+  <%= @dish.calories %>
+  <b>Ккал</b>
+</p>
+
+<p>
+  <b>Вес:</b>
+  <%= @dish.weight %>
+  <b>грамм</b>
+</p>
+
+<%= link_to 'Редактировать', edit_dish_path(@dish) %> |
+<%= link_to 'Назад', dishes_path %>

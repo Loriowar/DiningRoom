@@ -1,0 +1,27 @@
+<%= form_for(@available_foodstuff) do |f| %>
+  <% if @available_foodstuff.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@available_foodstuff.errors.count, "error") %> prohibited this available_foodstuff from being saved:</h2>
+
+      <ul>
+      <% @available_foodstuff.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <b>Дата:</b><br />
+      <%= f.date_select :date %>
+    </div>
+
+    <div class="field">
+      <b>Продукт:</b><br />
+      <%= f.select :foodstuff_id, options_from_collection_for_select(Foodstuff.all, :id, :name) %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

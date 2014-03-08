@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ID:</b>
+  <%= @cashbox.id %>
+</p>
+
+<p>
+  <b>Сотрудник:</b>
+  <%= @cashbox.employee.full_name %>
+</p>
+
+<p>
+  <b>Дата:</b>
+  <%= @cashbox.date %>
+</p>
+
+<p>
+  <b>Выручка:</b>
+  <%= @cashbox.profit %>
+</p>
+
+<%= link_to 'Редактировать', edit_cashbox_path(@cashbox) %> |
+<%= link_to 'Назад', cashbox_index_path %>

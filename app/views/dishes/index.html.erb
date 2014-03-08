@@ -1,0 +1,39 @@
+<h1>Список блюд</h1>
+
+<% if @dishes.blank? %>
+    <div>
+      Блюда отсутствуют
+    </div>
+<% else %>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Название</th>
+      <th>Калории (ккал)</th>
+      <th>Вес (грамм)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dishes.each do |dish| %>
+      <tr>
+        <td><%= dish.id %></td>
+        <td><%= dish.name %></td>
+        <td><%= dish.calories %></td>
+        <td><%= dish.weight %></td>
+        <td><%= link_to 'Показать', dish %></td>
+        <td><%= link_to 'Редактировать', edit_dish_path(dish) %></td>
+        <td><%= link_to 'Удалить', dish, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+<br>
+
+<%= link_to 'Новое Блюдо', new_dish_path %>

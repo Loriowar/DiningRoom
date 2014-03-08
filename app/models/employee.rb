@@ -10,6 +10,17 @@ class Employee < ActiveRecord::Base
 
 
   belongs_to :appointment
+  has_many :cashbox
+
+  def full_name
+    "#{last_name} #{first_name} #{patronymic_name}"
+  end
+
+  def short_name
+    result = "#{last_name} #{first_name[0]}."
+    result << "#{patronymic_name[0]}." if patronymic_name.present?
+    result
+  end
 
 
 end

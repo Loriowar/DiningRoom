@@ -1,0 +1,32 @@
+<%= form_for(@cashbox) do |f| %>
+  <% if @cashbox.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cashbox.errors.count, "error") %> prohibited this cashbox from being saved:</h2>
+
+      <ul>
+      <% @cashbox.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <b>Сотрудник:</b><br />
+      <%= f.select :employee_id, options_from_collection_for_select(Employee.all, :id, :short_name) %>
+    </div>
+
+    <!--<div class="field">-->
+      <!--<b>Дата:</b><br />-->
+      <!--<%= f.date_select :date %>-->
+    <!--</div>-->
+
+    <div class="field">
+      <b>Выручка:</b><br />
+      <%= f.number_field :profit %>
+    </div>
+
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

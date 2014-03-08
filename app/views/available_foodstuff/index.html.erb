@@ -1,0 +1,36 @@
+<h1>Список доступных продуктов</h1>
+
+<% if @available_foodstuff.blank? %>
+    <div>
+     Продукты отсутствуют
+    </div>
+<% else %>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Дата</th>
+      <th>Продукты</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @available_foodstuff.each do |available_foodstuff| %>
+      <tr>
+        <td><%= available_foodstuff.id %></td>
+        <td><%= available_foodstuff.date %></td>
+        <td><%= available_foodstuff.foodstuff.name %></td>
+        <td><%= link_to 'Показать', available_foodstuff %></td>
+        <td><%= link_to 'Редактировать', edit_available_foodstuff_path(available_foodstuff) %></td>
+        <td><%= link_to 'Удалить', available_foodstuff, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+<br>
+
+<%= link_to 'Новый продукт', new_available_foodstuff_path %>
