@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ID:</b>
+  <%= @dish_type.id %>
+</p>
+
+<p>
+  <b>Название:</b>
+  <%= @dish_type.name %>
+</p>
+
+<%= link_to 'Редактировать', edit_dish_type_path(@dish_type) %> |
+<%= link_to 'Назад', dish_types_path %>

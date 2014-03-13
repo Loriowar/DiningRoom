@@ -9,6 +9,8 @@ DiningRoom::Application.routes.draw do
   resources :available_foodstuff
   resources :menu
   resources :dishes
+  resources :production_plans
+  resources :dish_types
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -6,7 +6,7 @@ class CreateMenu < ActiveRecord::Migration
         dish_id INT(11),
         date DATE,
         price DECIMAL,
-        PRIMARY KEY  (id)
+        PRIMARY KEY (id)
       ) ENGINE=InnoDB CHARACTER SET=utf8;
     SQL
   end

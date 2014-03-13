@@ -1,0 +1,38 @@
+<h1>Список планов</h1>
+
+<% if @production_plans.blank? %>
+    <div>
+      Записи отсутствуют
+    </div>
+<% else %>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Дата</th>
+          <th>Название блюда</th>
+          <th>Количество</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @production_plans.each do |production_plan| %>
+          <tr>
+            <td><%= production_plan.id %></td>
+            <td><%= production_plan.d_execution %></td>
+            <td><%= production_plan.dish.name %></td>
+            <td><%= production_plan.amount %></td>
+            <td><%= link_to 'Показать', production_plan %></td>
+            <td><%= link_to 'Редактировать', edit_production_plan_path(production_plan) %></td>
+            <td><%= link_to 'Удалить', production_plan, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% end %>
+<br>
+
+<%= link_to 'Новый Продуктовый план', new_production_plan_path %>

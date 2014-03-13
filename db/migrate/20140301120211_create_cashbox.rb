@@ -6,7 +6,7 @@ class CreateCashbox < ActiveRecord::Migration
         employee_id INT(11),
         date DATE,
         profit DECIMAL,
-        PRIMARY KEY  (id)
+        PRIMARY KEY (id)
       ) ENGINE=InnoDB CHARACTER SET=utf8;
     SQL
   end

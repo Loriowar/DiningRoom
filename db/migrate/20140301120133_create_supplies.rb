@@ -7,7 +7,7 @@ class CreateSupplies < ActiveRecord::Migration
       foodstuff_id INT(11),
       d_delivery DATE,
       amount INT,
-      PRIMARY KEY  (id)
+      PRIMARY KEY (id)
     ) ENGINE=InnoDB CHARACTER SET=utf8;
     SQL
   end

@@ -1,0 +1,32 @@
+<%= form_for(@production_plan) do |f| %>
+  <% if @production_plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@production_plan.errors.count, "error") %> prohibited this production_plan from being saved:</h2>
+
+      <ul>
+      <% @production_plan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <b>Дата:</b><br />
+      <%= f.date_select :d_execution %>
+    </div>
+
+    <div class="field">
+      <b>Название:</b><br />
+      <%= f.select :dish_id, options_from_collection_for_select(Dish.all, :id, :name) %>
+    </div>
+
+    <div class="field">
+      <b>Количество:</b><br />
+      <%= f.number_field :amount %>
+    </div>
+
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

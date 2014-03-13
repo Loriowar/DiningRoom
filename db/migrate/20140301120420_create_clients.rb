@@ -7,7 +7,7 @@ class CreateClients < ActiveRecord::Migration
         first_name VARCHAR(255),
         patronymic_name VARCHAR(255),
         contact_phone VARCHAR(30),
-        PRIMARY KEY  (id)
+        PRIMARY KEY (id)
       ) ENGINE=InnoDB CHARACTER SET=utf8;
     SQL
   end

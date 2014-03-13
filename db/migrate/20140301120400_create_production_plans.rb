@@ -6,7 +6,7 @@ class CreateProductionPlans < ActiveRecord::Migration
         d_execution DATE,
         dish_id INT(11),
         amount INT,
-        PRIMARY KEY  (id)
+        PRIMARY KEY (id)
       ) ENGINE=InnoDB CHARACTER SET=utf8;
     SQL
   end

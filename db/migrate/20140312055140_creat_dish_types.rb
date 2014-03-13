@@ -1,18 +1,18 @@
-class CreateAppointments < ActiveRecord::Migration
+class CreatDishTypes < ActiveRecord::Migration
   def up
     execute <<-SQL
-      CREATE TABLE appointments (
+      CREATE TABLE dish_types (
         id INT(11) NOT NULL AUTO_INCREMENT,
         name VARCHAR(255),
-        salary DECIMAL,
         PRIMARY KEY (id)
+
       ) ENGINE=InnoDB CHARACTER SET=utf8;
     SQL
   end
 
   def down
     execute <<-SQL
-      DROP TABLE appointments;
+      DROP TABLE dish_types;
     SQL
   end
 end

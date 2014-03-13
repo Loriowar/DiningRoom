@@ -5,7 +5,7 @@ class CreateFoodstuff < ActiveRecord::Migration
         id INT(11) NOT NULL AUTO_INCREMENT,
         name VARCHAR(255),
         d_created DATETIME,
-        PRIMARY KEY  (id)
+        PRIMARY KEY (id)
       ) ENGINE=InnoDB CHARACTER SET=utf8;
     SQL
   end

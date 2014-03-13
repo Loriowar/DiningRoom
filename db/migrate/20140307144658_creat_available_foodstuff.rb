@@ -6,7 +6,7 @@ class CreatAvailableFoodstuff < ActiveRecord::Migration
         id INT(11) NOT NULL AUTO_INCREMENT,
         date DATE,
         foodstuff_id INT(11),
-        PRIMARY KEY  (id)
+        PRIMARY KEY (id)
       ) ENGINE=InnoDB CHARACTER SET=utf8;
     SQL
   end

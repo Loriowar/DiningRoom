@@ -6,7 +6,8 @@ class CreateDishes < ActiveRecord::Migration
         name VARCHAR(255),
         calories INT,
         weight INT,
-        PRIMARY KEY  (id)
+        dish_type_id INT(11),
+        PRIMARY KEY (id)
       ) ENGINE=InnoDB CHARACTER SET=utf8;
     SQL
   end

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ID:</b>
+  <%= @production_plan.id %>
+</p>
+
+<p>
+  <b>Дата:</b>
+  <%= @production_plan.d_execution %>
+</p>
+
+<p>
+  <b>Название блюда:</b>
+  <%= @production_plan.dish.name %>
+</p>
+
+<p>
+  <b>Количество:</b>
+  <%= @production_plan.amount %>
+</p>
+
+
+
+<%= link_to 'Редактировать', edit_production_plan_path(@production_plan) %> |
+<%= link_to 'Назад', production_plans_path %>
