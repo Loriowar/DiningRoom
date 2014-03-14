@@ -62,7 +62,7 @@ salads = DishType.create(name: 'Салат')
 drinks = DishType.create(name: 'Напитки')
 
 compote = Dish.create(name: 'Компот', weight: 250, dish_type_id: drinks.id )
-vegetable_salad = Dish.create(name: 'Овощной',
+vegetable_salad = Dish.create(name: 'Овощной салат',
                               calories: 50, weight: 400,
                               dish_type_id: salads.id )
 

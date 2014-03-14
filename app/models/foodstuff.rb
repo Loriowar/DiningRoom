@@ -9,6 +9,7 @@ class Foodstuff < ActiveRecord::Base
 
   has_many :supplies
   has_many :available_foodstuff
+  has_many :dish_mixtures
 
   def fill_default
     self.d_created = DateTime.now

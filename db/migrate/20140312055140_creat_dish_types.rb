@@ -5,7 +5,6 @@ class CreatDishTypes < ActiveRecord::Migration
         id INT(11) NOT NULL AUTO_INCREMENT,
         name VARCHAR(255),
         PRIMARY KEY (id)
-
       ) ENGINE=InnoDB CHARACTER SET=utf8;
     SQL
   end

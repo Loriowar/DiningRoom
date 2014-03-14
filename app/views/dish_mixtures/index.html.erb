@@ -1,0 +1,36 @@
+<h1>Список составов блюд</h1>
+
+<% if @dish_mixtures.blank? %>
+    <div>
+      Типы блюд отсутствуют
+    </div>
+<% else %>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Блюдо</th>
+          <th>Состав</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @dish_mixtures.each do |dish_mixture| %>
+          <tr>
+            <td><%= dish_mixture.id %></td>
+            <td><%= dish_mixture.dish.name %></td>
+            <td><%= dish_mixture.foodstuff.name %></td>
+            <td><%= link_to 'Показать', dish_mixture %></td>
+            <td><%= link_to 'Редактировать', edit_dish_mixture_path(dish_mixture) %></td>
+            <td><%= link_to 'Удалить', dish_mixture, method: :delete, data: { confirm: 'Вы уверенв?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% end %>
+<br>
+
+<%= link_to 'Новый состав блюда', new_dish_mixture_path %>

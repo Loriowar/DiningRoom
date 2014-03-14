@@ -6,7 +6,6 @@ class CreatDishMixtures < ActiveRecord::Migration
         dish_id INT(11),
         foodstuff_id INT(11),
         PRIMARY KEY (id)
-
       ) ENGINE=InnoDB CHARACTER SET=utf8;
     SQL
   end

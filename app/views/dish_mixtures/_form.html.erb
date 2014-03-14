@@ -1,0 +1,27 @@
+<%= form_for(@dish_mixture) do |f| %>
+  <% if @dish_mixture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dish_mixture.errors.count, "error") %> prohibited this dish_mixture from being saved:</h2>
+
+      <ul>
+      <% @dish_mixture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <b>Блюдо:</b><br />
+      <%= f.select :dish_id, options_from_collection_for_select(Dish.all, :id, :name) %>
+    </div>
+
+    <div class="field">
+      <b>Продукт:</b><br />
+      <%= f.select :foodstuff_id, options_from_collection_for_select(Foodstuff.all, :id, :name) %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

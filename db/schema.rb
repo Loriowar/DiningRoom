@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140312055140) do
+ActiveRecord::Schema.define(version: 20140314101659) do
 
   create_table "appointments", force: true do |t|
     t.string  "name"
@@ -40,6 +40,11 @@ ActiveRecord::Schema.define(version: 20140312055140) do
     t.string  "theme"
     t.string  "description", limit: 3000
     t.integer "client_id"
+  end
+
+  create_table "dish_mixtures", force: true do |t|
+    t.integer "dish_id"
+    t.integer "foodstuff_id"
   end
 
   create_table "dish_types", force: true do |t|

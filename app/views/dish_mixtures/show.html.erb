@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ID:</b>
+  <%= @dish_mixture.id %>
+</p>
+
+<p>
+  <b>Блюдо:</b>
+  <%= @dish_mixture.dish.name %>
+</p>
+
+<p>
+  <b>Состав:</b>
+  <%= @dish_mixture.foodstuff.name %>
+</p>
+
+<%= link_to 'Редактировать', edit_dish_mixture_path(@dish_mixture) %> |
+<%= link_to 'Назад', dish_mixtures_path %>
