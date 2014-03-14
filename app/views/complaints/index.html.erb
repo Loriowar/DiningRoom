@@ -1,0 +1,38 @@
+<h1>Список жалоб</h1>
+
+<% if @complaints.blank? %>
+    <div>
+      Жалобы отсутствуют
+    </div>
+<% else %>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Тема</th>
+          <th>Описание</th>
+          <th>ФИО клиента</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @complaints.each do |complaint| %>
+          <tr>
+            <td><%= complaint.id %></td>
+            <td><%= complaint.theme %></td>
+            <td><%= complaint.description %></td>
+            <td><%= complaint.client.present? ? complaint.client.short_name : '' %></td>
+            <td><%= link_to 'Показать', complaint %></td>
+            <td><%= link_to 'Редактировать', edit_complaint_path(complaint) %></td>
+            <td><%= link_to 'Удалить', complaint, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% end %>
+<br>
+
+<%= link_to 'Новая жалоба', new_complaint_path %>

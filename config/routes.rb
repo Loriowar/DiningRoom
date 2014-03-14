@@ -13,6 +13,7 @@ DiningRoom::Application.routes.draw do
   resources :dish_types
   resources :dish_mixtures
   resources :clients
+  resources :complaints
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,32 @@
+<%= form_for(@complaint) do |f| %>
+  <% if @complaint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@complaint.errors.count, "error") %> prohibited this complaint from being saved:</h2>
+
+      <ul>
+      <% @complaint.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <b>Тема:</b><br />
+      <%= f.text_field :theme %>
+    </div>
+
+    <div class="field">
+      <b>Описание:</b><br />
+      <%= f.text_field :description %>
+    </div>
+
+    <div class="field">
+      <b>Клиент:</b><br />
+      <%= f.select :client_id, options_from_collection_for_select(Client.all, :id, :full_name), include_blank: true%>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

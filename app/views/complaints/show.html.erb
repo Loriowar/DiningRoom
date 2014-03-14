@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>ID:</b>
+  <%= @complaint.id %>
+</p>
+
+<p>
+  <b>Тема:</b>
+  <%= @complaint.theme %>
+</p>
+
+<p>
+  <b>Описания:</b>
+  <%= @complaint.description %>
+</p>
+
+<p>
+  <b>ФИО клиента:</b>
+  <%= @complaint.client.present? ? @complaint.client.short_name : '' %>
+</p>
+
+<%= link_to 'Редактировать', edit_complaint_path(@complaint) %> |
+<%= link_to 'Назад', complaints_path %>
