@@ -1,0 +1,40 @@
+<h1>Список клиентов</h1>
+
+<% if @clients.blank? %>
+    <div>
+      Клиенты отсутствуют
+    </div>
+<% else %>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Фамилия</th>
+          <th>Имя</th>
+          <th>Отчество</th>
+          <th>Телефон</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @clients.each do |client| %>
+          <tr>
+            <td><%= client.id %></td>
+            <td><%= client.last_name %></td>
+            <td><%= client.first_name %></td>
+            <td><%= client.patronymic_name %></td>
+            <td><%= client.contact_phone %></td>
+            <td><%= link_to 'Показать', client %></td>
+            <td><%= link_to 'Редактировать', edit_client_path(client) %></td>
+            <td><%= link_to 'Удалить', client, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% end %>
+<br>
+
+<%= link_to 'Новый клиент', new_client_path %>
