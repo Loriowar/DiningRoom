@@ -75,3 +75,18 @@ plan1_rec2 = ProductionPlan.create(d_execution: DateTime.now + 1.day,
 
 menu1_rec1 = Menu.create(dish_id: vegetable_salad.id, date: DateTime.now, price: 45)
 menu1_rec1 = Menu.create(dish_id: compote.id, date: DateTime.now, price: 10)
+
+mixture_rec1 = DishMixture.create(dish_id: vegetable_salad.id, foodstuff_id: carrot)
+mixture_rec2 = DishMixture.create(dish_id: vegetable_salad.id, foodstuff_id: potate)
+
+client_rec1 = Client.create(last_name: 'Иванькин',
+                            first_name: 'Михаил',
+                            patronymic_name: 'Петрович',
+                            contact_phone: '897756485')
+client_rec2 = Client.create(last_name: 'Борткина',
+                            first_name: 'Анна',
+                            patronymic_name: 'Александровна',
+                            contact_phone: '8977734563')
+
+complaint_rec1 = Complaint.create(theme: 'Обслуживание', description: 'Кассир грубит клиентам', client_id: client_rec1)
+complaint_rec2 = Complaint.create(description: 'Плохо вымыты столы')
