@@ -36,7 +36,8 @@ ActiveRecord::Schema.define(version: 20140314101659) do
     t.string "contact_phone",   limit: 30
   end
 
-  create_table "complaints", force: true do |t|
+  create_table "complaints", id: false, force: true do |t|
+    t.integer "id"
     t.string  "theme"
     t.string  "description", limit: 3000
     t.integer "client_id"
@@ -55,7 +56,6 @@ ActiveRecord::Schema.define(version: 20140314101659) do
     t.string  "name"
     t.integer "calories"
     t.integer "weight"
-    t.integer "dish_type_id"
   end
 
   create_table "employees", force: true do |t|
@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(version: 20140314101659) do
 
   create_table "menu", force: true do |t|
     t.integer "dish_id"
-    t.date    "date"
-    t.decimal "price",   precision: 10, scale: 0
+    t.string  "week_day", limit: 20
+    t.decimal "price",               precision: 10, scale: 0
   end
 
   create_table "production_plans", force: true do |t|

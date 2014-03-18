@@ -1,5 +1,7 @@
 DiningRoom::Application.routes.draw do
 
+  root 'home#index'
+
   resources :foodstuff
   resources :supplies
   resources :providers

@@ -1,0 +1,81 @@
+%h1
+  Столовая
+
+%table
+  %thead
+    %tr
+      %th
+        Сущность
+      %th
+        Описание
+  %tbody
+    %tr
+      %td
+        = link_to 'Продукт', foodstuff_index_path
+      %td
+        Таблица с продуктами питания
+    %tr
+      %td
+        = link_to 'Поставки', supplies_path
+      %td
+        Таблица с прошедшими и будущими поставками
+    %tr
+      %td
+        = link_to 'Поставщики', providers_path
+      %td
+        Таблица со списком поставщиков
+    %tr
+      %td
+        = link_to 'Касса', cashbox_index_path
+      %td
+        Таблица с записями о каждой сессии работы кассы
+    %tr
+      %td
+        = link_to 'Сотрудники', employees_path
+      %td
+        Таблица с записями сотрудниках, работающих в столовой
+    %tr
+      %td
+        = link_to 'Должность', appointments_path
+      %td
+        Таблица с доступными должностями на предприятии
+    %tr
+      %td
+        = link_to 'Меню', menu_index_path
+      %td
+        Таблица со строками из меню
+    %tr
+      %td
+        = link_to 'Блюда', dishes_path
+      %td
+        Таблица со блюдами, которые возможно приготовить на предприятии
+    %tr
+      %td
+        = link_to 'План производства', production_plans_path
+      %td
+        План производства продукции на предприятии
+    %tr
+      %td
+        = link_to 'Клиенты', clients_path
+      %td
+        Таблица со списком клиентов
+    %tr
+      %td
+        = link_to 'Жалобы', complaints_path
+      %td
+        Жалобы клиентов столовой
+    %tr
+      %td
+        = link_to 'Доступные продукты', available_foodstuff_index_path
+      %td
+        Перечень доступных для использования продуктов
+    %tr
+      %td
+        = link_to 'Типы блюд', dish_types_path
+      %td
+        Список типов блюд
+    %tr
+      %td
+        = link_to 'Состав блюд', dish_mixtures_path
+      %td
+        Описание состава блюд
