@@ -1,5 +1,5 @@
 class DishesController < ApplicationController
-  before_action :set_dish, only: [:show, :edit, :update, :destroy]
+  before_action :set_dish, only: [:show, :edit, :update, :destroy, :mixture_preview]
 
   # GET /dishes
   # GET /dishes.json
@@ -59,6 +59,10 @@ class DishesController < ApplicationController
       format.html { redirect_to dishes_url }
       format.json { head :no_content }
     end
+  end
+
+  def mixture_preview
+
   end
 
   private

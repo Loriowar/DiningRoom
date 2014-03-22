@@ -1,0 +1,16 @@
+%h1
+  Меню по датам
+
+- if @available_dates_for_menu.blank?
+  %div
+    Записи отсутствуют
+    %br
+    %br
+- else
+  %ul
+    - @available_dates_for_menu.each do |menu_date|
+      %li
+        = link_to menu_date, url_for(controller: 'menu', action: 'show_by_date', menu_date: menu_date)
+
+
+= link_to 'Назад', menu_index_path

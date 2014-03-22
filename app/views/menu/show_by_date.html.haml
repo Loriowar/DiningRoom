@@ -1,0 +1,10 @@
+%h2
+  = "Меню за #{@menu_for_date.first.date} число"
+
+%ul
+  - @menu_for_date.each do |menu_row|
+    %li
+      = menu_row.dish.name
+
+
+= link_to 'Назад', by_dates_menu_index_path

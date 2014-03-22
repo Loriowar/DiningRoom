@@ -9,8 +9,17 @@ DiningRoom::Application.routes.draw do
   resources :employees
   resources :cashbox
   resources :available_foodstuff
-  resources :menu
-  resources :dishes
+  resources :menu do
+    collection do
+      get 'by_dates'
+      get 'show_by_date/:menu_date', action: :show_by_date
+    end
+  end
+  resources :dishes do
+    member do
+      get 'mixture_preview'
+    end
+  end
   resources :production_plans
   resources :dish_types
   resources :dish_mixtures

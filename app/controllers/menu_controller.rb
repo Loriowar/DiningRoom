@@ -61,6 +61,14 @@ class MenuController < ApplicationController
     end
   end
 
+  def by_dates
+    @available_dates_for_menu = Menu.select(:date).uniq.pluck(:date)
+  end
+
+  def show_by_date
+    @menu_for_date = Menu.where(date: params[:menu_date])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_menu

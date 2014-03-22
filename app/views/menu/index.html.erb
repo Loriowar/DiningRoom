@@ -1,4 +1,4 @@
-<h1>Список меню</h1>
+<h1>Список строк меню</h1>
 
 <% if @menu.blank? %>
     <div>
@@ -36,7 +36,11 @@
 
 <br>
 
-<%= link_to 'Новое Меню', new_menu_path %>
+<%= link_to 'Новая строка меню', new_menu_path %>
+
+<br>
+
+<%= link_to 'Меню по датам', by_dates_menu_index_path %>
 
 <br/><br/>
 

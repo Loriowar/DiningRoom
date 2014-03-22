@@ -17,6 +17,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -28,6 +29,7 @@
         <td><%= dish.name %></td>
         <td><%= dish.calories %></td>
         <td><%= dish.weight %></td>
+        <th><%= link_to 'Показать состав', mixture_preview_dish_path(dish) %></th>
         <td><%= link_to 'Показать', dish %></td>
         <td><%= link_to 'Редактировать', edit_dish_path(dish) %></td>
         <td><%= link_to 'Удалить', dish, method: :delete, data: { confirm: 'Вы уверены?' } %></td>

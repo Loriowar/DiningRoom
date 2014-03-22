@@ -1,0 +1,15 @@
+%h2
+  = @dish.name
+
+- if @dish.dish_mixtures.present?
+  %ul
+    - @dish.dish_mixtures.each do |dish_mixture|
+      %li
+        = dish_mixture.foodstuff.name
+- else
+  Состав блюда не указан
+  %br
+  %br
+
+
+= link_to 'Назад', dishes_path
