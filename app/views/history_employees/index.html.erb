@@ -1,0 +1,44 @@
+<h1>Журнал изменения записей о сотрудниках</h1>
+
+<% if @history_employees.blank? %>
+    <div>
+      Журнал пуст
+    </div>
+<% else %>
+<table>
+  <thead>
+    <tr>
+      <th>ID записи журнала</th>
+      <th>ID сотрудника</th>
+      <th>Фамилия</th>
+      <th>Имя</th>
+      <th>Отчество</th>
+      <th>Дата приема</th>
+      <th>Должность</th>
+      <th>Действие над записью</th>
+      <th>Дата изменения</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @history_employees.each do |history_employee| %>
+      <tr>
+        <td><%= history_employee.id %></td>
+        <td><%= history_employee.employee_id %></td>
+        <td><%= history_employee.last_name %></td>
+        <td><%= history_employee.first_name %></td>
+        <td><%= history_employee.patronymic_name %></td>
+        <td><%= history_employee.d_hiring %></td>
+        <td><%= history_employee.appointment.name %></td>
+        <td><%= history_employee.event_to_rus_string %></td>
+        <td><%= history_employee.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+<br/>
+
+<%= link_to '<-На главную', root_url %>

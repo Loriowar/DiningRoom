@@ -11,6 +11,7 @@ class Employee < ActiveRecord::Base
 
   belongs_to :appointment
   has_many :cashbox
+  has_many :history_employees
 
   def full_name
     "#{last_name} #{first_name} #{patronymic_name}"
