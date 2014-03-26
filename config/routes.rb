@@ -26,6 +26,7 @@ DiningRoom::Application.routes.draw do
   resources :clients
   resources :complaints
   resources :history_employees, only: [:index]
+  resources :daily_earnings, only: [:index]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

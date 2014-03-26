@@ -1,6 +1,6 @@
 class HistoryEmployee < ActiveRecord::Base
 
-  attr_accessible :employee_id, :last_name, :first_name, :patronymic_name, :d_hiring, :appointment_id, :event, :created_at
+  attr_readonly :employee_id, :last_name, :first_name, :patronymic_name, :d_hiring, :appointment_id, :event, :created_at
 
   belongs_to :employee
   belongs_to :appointment

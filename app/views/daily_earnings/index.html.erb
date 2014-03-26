@@ -1,0 +1,29 @@
+<h1>Сутчная выручка</h1>
+
+<% if @daily_earnings.blank? %>
+    <div>
+      Нет данных о работе кассы
+    </div>
+<% else %>
+<table>
+  <thead>
+    <tr>
+      <th>Дата</th>
+      <th>Суточная выручка</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daily_earnings.each do |daily_earning| %>
+      <tr>
+        <td><%= daily_earning.date %></td>
+        <td style="text-align: right"><%= daily_earning.daily_earning %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+<br/>
+
+<%= link_to '<-На главную', root_url %>
