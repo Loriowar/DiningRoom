@@ -23,5 +23,9 @@ class Employee < ActiveRecord::Base
     result
   end
 
+  def sort_name_from_db
+    ActiveRecord::Base.connection.execute("SELECT employee_short_name(#{id});").first.first
+  end
 
+  Mysql2::Result
 end

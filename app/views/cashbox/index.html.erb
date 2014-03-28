@@ -22,7 +22,7 @@
         <% @cashbox.each do |cashbox| %>
           <tr>
             <td><%= cashbox.id %></td>
-            <td><%= cashbox.employee.short_name %></td>
+            <td><%= cashbox.employee.sort_name_from_db %></td>
             <td><%= cashbox.date %></td>
             <td><%= cashbox.profit %></td>
             <td><%= link_to 'Показать', cashbox %></td>
