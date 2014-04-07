@@ -1,0 +1,37 @@
+<h1>Журнал чеков</h1>
+
+<% if @cheque_numbers.blank? %>
+    <div>
+      Нет данных по чекам
+    </div>
+<% else %>
+    <table>
+      <thead>
+      <tr>
+        <th>Номер чека</th>
+        <th>Сумма по чеку</th>
+        <th>Список товаров</th>
+        <th>Дата создания</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @cheque_numbers.each do |cheque_number| %>
+          <tr>
+            <td><%= cheque_number %></td>
+            <td style="text-align: right"><%= Cheque.sum_by_cheque(cheque_number) %></td>
+            <th><%= Cheque.dish_list_by_cheque_number(cheque_number).collect(&:name).join(', ') %></th>
+            <th><%= Cheque.where(cheque_id: cheque_number).first.created_at %></th>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% end %>
+
+<br/>
+
+<%= link_to 'Новый чек', new_cheque_path %>
+
+<br/><br/>
+
+<%= link_to '<-На главную', root_url %>

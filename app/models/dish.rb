@@ -11,6 +11,7 @@ class Dish< ActiveRecord::Base
   has_many :menu
   has_many :production_plans
   has_many :dish_mixtures
+  has_many :cheques
   belongs_to :dish_type
 
 end
