@@ -1,5 +1,22 @@
 <h1>Новый чек</h1>
 
-<%# TODO %>
+<% if @cheque.present? && @cheque.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@cheque.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+    <ul>
+      <% @cheque.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_tag cheques_path, method: :post do %>
+  <div class="field">
+    <%= label_tag :dish_list, 'Список покупок по чеку' %>
+    <%= text_field_tag :dish_list, '', size: 100 %>
+  </div>
+<% end %>
 
 <%= link_to 'Назад', cheques_path %>

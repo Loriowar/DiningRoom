@@ -22,8 +22,10 @@ class Cheque < ActiveRecord::Base
 
       dish_ids_string = dish_ids_list.join(',')
 
-      transaction do
-        ActiveRecord::Base.connection.execute("CALL explode_table('#{dish_ids_string}');")
+      if dish_ids_string.present?
+        transaction do
+          ActiveRecord::Base.connection.execute("CALL explode_table('#{dish_ids_string}');")
+        end
       end
     end
 

@@ -4,10 +4,13 @@ class ChequesController < ApplicationController
   end
 
   def new
-
+    @cheque = Cheque.new
   end
 
   def create
+    Cheque.create_cheque(params[:dish_list])
 
+    redirect_to controller: :cheques, action: :index
+    return
   end
 end
